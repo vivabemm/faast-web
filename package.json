@@ -27,6 +27,8 @@
     "start": "ws --https --spa dist/index.html --rewrite '/portfolio/* -> /dist/$1'",
     "dev": "webpack-dev-server --progress --https --config webpack/dev.config.js",
     "lint": "eslint src/",
+    "test": "mocha-webpack --webpack-config webpack/test.config.js -r chai/register-expect --recursive --glob \"*.test.js\" test",
+    "test-watch": "npm run test -- --watch",
     "build:webpack": "webpack --progress --config webpack/prod.config.js",
     "build:ipfs": "cross-env IPFS=true npm run build:webpack",
     "build": "npm run lint && npm run build:webpack",
