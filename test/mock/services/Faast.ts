@@ -20,7 +20,7 @@ const getPriceChart = (symbol) => Promise.resolve({})
 
 const getMarketInfo = (pair) => Promise.resolve({})
 
-const postExchange = (info) => Promise.resolve({})
+const postFixedPriceSwap = (info) => Promise.resolve({})
 
 const getOrderStatus = (depositSymbol, receiveSymbol, address, timestamp) => Promise.resolve({})
 
