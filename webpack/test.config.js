@@ -1,12 +1,13 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const path = require('path')
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 
 const getBaseConfig = require('./base.config.js')
 
 const { projectRoot } = require('./common')
 
-module.exports = merge(getBaseConfig('development'), {
+module.exports = new SpeedMeasurePlugin().wrap(merge(getBaseConfig('production'), {
   devtool: 'inline-source-map',
   output: {
     path: path.join(projectRoot, 'dist-test'),
@@ -26,6 +27,6 @@ module.exports = merge(getBaseConfig('development'), {
     ]
   },
   plugins: [
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
   ],
-})
+}))

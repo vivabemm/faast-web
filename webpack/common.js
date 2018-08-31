@@ -4,6 +4,7 @@ const HtmlPlugin = require('html-webpack-plugin')
 const FaviconPlugin = require('favicons-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const IncludeAssetsPlugin = require('html-webpack-include-assets-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const pkg = require('../package.json')
 
@@ -25,6 +26,15 @@ const bundleOutputPath = 'bundle/'
 const faviconOutputPath = 'favicon/'
 
 const vendorDeps = ['font-awesome/css/font-awesome.min.css']
+
+const uglifyPlugin = new UglifyJsPlugin({
+  sourceMap: true,
+  uglifyOptions: {
+    mangle: {
+      reserved: ['BigInteger', 'ECPair', 'Point']
+    }
+  }
+})
 
 const getWebPlugins = (isDev) => [
   new HtmlPlugin({
@@ -79,4 +89,5 @@ module.exports = {
   bundleOutputPath,
   faviconOutputPath,
   getWebPlugins,
+  uglifyPlugin,
 }

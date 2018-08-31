@@ -16,18 +16,16 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      // only specify one entry point
-      // and require all tests in there
+      // only specify one entry point and require all tests in there
       'test/index.js': ['webpack']
     },
 
     coverageReporter: {
-
       dir: 'build/coverage/',
       reporters: [
-          { type: 'html' },
-          { type: 'text' },
-          { type: 'text-summary' }
+        { type: 'html' },
+        { type: 'text' },
+        { type: 'text-summary' }
       ]
     },
 
