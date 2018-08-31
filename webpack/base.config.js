@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const HardSourcePlugin = require('hard-source-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const {
@@ -155,7 +154,6 @@ module.exports = (NODE_ENV) => {
         ignoreOrder: true,
         disable: isDev,
       }),
-      new HardSourcePlugin(),
     ]
   }
 }

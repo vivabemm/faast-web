@@ -4,6 +4,7 @@ const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CleanPlugin = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HardSourcePlugin = require('hard-source-webpack-plugin')
 
 const getBaseConfig = require('./base.config.js')
 
@@ -33,6 +34,7 @@ module.exports = merge(getBaseConfig('production'), {
     new OptimizeCssAssetsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HashedModuleIdsPlugin(),
+    new HardSourcePlugin(),
     ...getWebPlugins(false),
   ]
 })

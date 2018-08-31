@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const path = require('path')
+const HardSourcePlugin = require('hard-source-webpack-plugin')
 
 const getBaseConfig = require('./base.config.js')
 
@@ -27,6 +28,7 @@ module.exports = merge(getBaseConfig('development'), {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new HardSourcePlugin(),
     ...getWebPlugins(true)
   ]
 })
