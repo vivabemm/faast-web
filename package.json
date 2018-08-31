@@ -150,6 +150,7 @@
     "riek": "github:go-faast/riek",
     "rlp": "^2.0.0",
     "sass-loader": "^6.0.6",
+    "speed-measure-webpack-plugin": "^1.2.2",
     "standard": "^10.0.3",
     "style-loader": "^0.18.2",
     "svg-react-loader": "^0.4.5",
