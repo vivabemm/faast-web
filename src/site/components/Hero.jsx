@@ -57,7 +57,7 @@ export default compose(
             The <span className='special-word'>safest</span> way to to build a diversified cryptocurrency portfolio
             </p>
             <p><a className='btn btn-primary btn-lg hero-button py-2' role='button' href='/app'>
-      Connect your Wallet
+      Connect your Wallet 
             </a></p>
           </Col>
           <Col className={classNames('pr-3 d-block')}>
